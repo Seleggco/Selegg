@@ -89,7 +89,7 @@ nav ul li a.active {
 }
 
 .hero {
-    background-image: url('/images/BANNER 1.png'); 
+    background-image: url('images/BANNER 1.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
