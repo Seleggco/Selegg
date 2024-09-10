@@ -1,0 +1,377 @@
+:root {
+    --color-verde-natural: #AED073;
+    --color-amarillo-arequipe: #F8B13C;
+    --color-azul-vainilla: #6FBCE9;
+    --color-violeta-cremoso: #A075B2;
+    --color-salmon: #ED6E6F;
+    --color-gris-oscuro: #515151;
+    --color-blanco-huevo: #F9F7E1;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: var(--color-gris-oscuro);
+    background-color: var(--color-blanco-huevo);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--color-verde-natural);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 300px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--color-blanco-huevo);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background-image: url('/images/BANNER 1.png'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; /* Ajusta la altura según tus necesidades */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay oscuro para mejorar la legibilidad del texto */
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-left: 10%;
+    position: relative;
+    z-index: 1;
+    color: var(--color-blanco-huevo);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-amarillo-arequipe);
+    color: var(--color-gris-oscuro);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-verde-natural);
+    transform: scale(1.05);
+}
+
+
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-amarillo-arequipe);
+    color: var(--color-gris-oscuro);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-verde-natural);
+}
+
+.about, .productos, .contact {
+    max-width: 100%;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.productos-h2{
+    text-align: center;
+
+}
+
+.producto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: 2rem;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    color: var(--color-verde-natural);
+    margin: 1rem;
+}
+
+.producto-card p {
+    margin: 0 1rem 1rem;
+}
+
+.btn-detalles {
+    display: inline-block;
+    background-color: var(--color-amarillo-arequipe);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1rem;
+    font-weight: bold;
+}
+
+.recetas {
+    background-color: var(--color-blanco-huevo);
+    padding: 4rem 0;
+}
+
+.recetas h2 {
+    text-align: center;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 2rem;
+}
+
+.receta-carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    cursor: grab;
+}
+
+.receta-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.receta-carousel:active {
+    cursor: grabbing;
+}
+
+.receta-grid {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: calc(100% * 5 / 3); /* Ajustado para 5 recetas toca ajustar esto cada vez que se anada otra receta  */
+}
+
+.receta-card {
+    flex: 0 0 calc(100% / 5); /* Cada tarjeta es 1/5 del ancho total */
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.receta-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.receta-card h3 {
+    color: var(--color-verde-natural);
+    margin: 15px;
+    
+}
+
+.receta-card p {
+    margin: 0 15px 15px;
+}
+
+.btn-receta {
+    display: block;
+    background-color: var(--color-verde-natural);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-receta:hover {
+    background-color: var(--color-azul-vainilla); /* Cambia al color que prefieras */
+    color: var(--color-blanco-huevo); /* Ajusta el color del texto */
+    transform: translateY(-2px); /* Efecto sutil de elevación */
+}
+/* Efecto de "presionar" al hacer clic */
+.btn-receta:active {
+    transform: translateY(1px);
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-gris-oscuro);
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--color-violeta-cremoso);
+    color: var(--color-blanco-huevo);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--color-blanco-huevo);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    
+}
+
+@media (max-width: 1200px) {
+    .receta-grid {
+        width: calc(100% * 5); /* En móvil, cada receta ocupa todo el ancho */
+    }
+    .receta-card {
+        flex: 0 0 100%;
+    }
+}
+
+.contact {
+    background-color: var(--color-blanco-huevo);
+    padding: 4rem 0;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    margin-left: 2rem;
+}
+
+.contact-info h2 {
+    color: var(--color-verde-natural);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 2rem;
+    }
+
+    .contact-info {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin-left: 5%;
+        max-width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
