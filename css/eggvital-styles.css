@@ -88,7 +88,7 @@ nav ul li a.active {
     }
 }
 
-/* .hero {
+.hero {
     background-image: url('/images/BANNER\ 1.png'); 
     background-size: cover;
     background-position: center;
@@ -97,7 +97,7 @@ nav ul li a.active {
     display: flex;
     align-items: center;
     position: relative;
-} */
+}
 
 .hero::before {
     content: '';
