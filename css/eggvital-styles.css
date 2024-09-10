@@ -51,11 +51,11 @@ nav ul li a {
 }
 
 .hero {
-    background-image: url('/images/BANNER 1.png'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('/images/BANNER 1.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh; /* Ajusta la altura según tus necesidades */
+    height: 50vh; /* Ajusta la altura  */
     display: flex;
     align-items: center;
     position: relative;
@@ -253,7 +253,7 @@ h2 {
 }
 
 .btn-receta:hover {
-    background-color: var(--color-azul-vainilla); /* Cambia al color que prefieras */
+    background-color: var(--color-azul-vainilla); /* Cambia al color  */
     color: var(--color-blanco-huevo); /* Ajusta el color del texto */
     transform: translateY(-2px); /* Efecto sutil de elevación */
 }
@@ -305,7 +305,7 @@ footer {
 
 @media (max-width: 1200px) {
     .receta-grid {
-        width: calc(100% * 5); /* En móvil, cada receta ocupa todo el ancho */
+        width: calc(100% * 5); /* En celular, cada receta ocupa todo el ancho */
     }
     .receta-card {
         flex: 0 0 100%;
