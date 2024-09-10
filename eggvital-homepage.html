@@ -9,18 +9,18 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="EggVital Logo">
-            </div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#recetas">Recetas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+          <div class="logo">
+            <img src="images/logo.png" alt="EggVital Logo">
+          </div>
+          <ul>
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Recetas</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
 
     <main>
         <section id="inicio" class="hero">
@@ -31,68 +31,82 @@
             </div>
         </section>
 
-        <section id="nosotros" class="about">
-            <h2>Sobre EggVital</h2>
-            <p>En EggVital, nos enfocamos en tu bienestar, ofreciéndote una fuente pura de proteínas a base de albúmina. Nuestros productos, hechos 100% de claras de huevo, te ayudan a mantener un equilibrio nutricional óptimo, mejorando tu metabolismo y fortaleciendo tu sistema inmune.</p>
-        </section>
-
-        <section id="productos" class="productos">
-            <h2 class="productos-h2">Nuestros Productos</h2>
-            <div class="producto-grid">
-                <div class="producto-card">
-                    <img src="images/Productos/NATURAL.jpg" alt="EggVital Classic">
-                    <h3>EggVital Natural</h3>
-                    <p>Nuestra fórmula original, perfecta para cualquier receta.</p>
-                    <a href="#" class="btn-detalles">Ver Detalles</a>
+        <section id="nosotros" class="section about">
+            <div class="about-container">
+              <div class="about-text">
+                <h2>Sobre EggVital</h2>
+                <p>En EggVital, nos enfocamos en tu bienestar, ofreciéndote una fuente pura de proteínas a base de albúmina. Nuestros productos, hechos 100% de claras de huevo, te ayudan a mantener un equilibrio nutricional óptimo, mejorando tu metabolismo y fortaleciendo tu sistema inmune.</p>
+              </div>
+              <div class="about-video">
+                <div class="video-placeholder">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qhSj-5Hyp3c?si=8M2DAcIbkRCiGaE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <img src="/api/placeholder/560/315" alt="Video placeholder" />
                 </div>
-                <div class="producto-card">
-                    <img src="images/Productos/VANILLA.jpg" alt="EggVital Sport">
-                    <h3>EggVital Vainilla</h3>
-                    <p>Fórmula ideal para un toque más dulce.</p>
-                    <a href="#" class="btn-detalles">Ver Detalles</a>
-                </div>
-                <div class="producto-card">
-                    <img src="images/Productos/AREQUIPE.jpg" alt="EggVital Gourmet">
-                    <h3>EggVital Arequipe</h3>
-                    <p>Ideal para repostería y cocina creativa.</p>
-                    <a href="#" class="btn-detalles">Ver Detalles</a>
-                </div>
+              </div>
             </div>
         </section>
 
+        <section id="productos" class="productos">
+            <div class="productos-container">
+              <h2>Nuestros Productos</h2>
+              <div class="producto-grid">
+                <div class="producto-card">
+                  <img src="images/Productos/NATURAL.jpg" alt="EggVital Natural">
+                  <h3>EggVital Natural</h3>
+                  <p>Nuestra fórmula original, perfecta para cualquier receta.</p>
+                  <a href="#" class="btn-detalles">Ver Detalles</a>
+                </div>
+                <div class="producto-card">
+                  <img src="images/Productos/VANILLA.jpg" alt="EggVital Vainilla">
+                  <h3>EggVital Vainilla</h3>
+                  <p>Fórmula ideal para un toque más dulce.</p>
+                  <a href="#" class="btn-detalles">Ver Detalles</a>
+                </div>
+                <div class="producto-card">
+                  <img src="images/Productos/AREQUIPE.jpg" alt="EggVital Arequipe">
+                  <h3>EggVital Arequipe</h3>
+                  <p>Ideal para repostería y cocina creativa.</p>
+                  <a href="#" class="btn-detalles">Ver Detalles</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
         <section id="recetas" class="recetas">
-            <h2>Recetas Deliciosas con EggVital</h2>
-            <div class="receta-carousel">
-                <div class="receta-grid">
-                    <div class="receta-card">
-                        <img src="images/protein-smoothie.jpg" alt="Batido Proteico">
-                        <h3>Batido Proteico de Fresa y Plátano</h3>
-                        <p>Un delicioso batido lleno de proteínas para empezar tu día.</p>
-                        <a href="#" class="btn-receta">Ver Receta</a>
-                    </div>
-                    <div class="receta-card">
-                        <img src="images/protein-pancakes.jpg" alt="Pancakes Proteicos">
-                        <h3>Pancakes Proteicos de Avena</h3>
-                        <p>Pancakes saludables y deliciosos para un desayuno nutritivo.</p>
-                        <a href="#" class="btn-receta">Ver Receta</a>
-                    </div>
-                    <div class="receta-card">
-                        <img src="images/RECETAS/muffins-espinacas.png" alt="Muffins de Espinacas">
-                        <h3>Muffins de Claras y Espinacas</h3>
-                        <p>Muffins salados perfectos para un snack saludable.</p>
-                        <a href="#" class="btn-receta">Ver Receta</a>
-                    </div>
-                    <div class="receta-card">
-                        <img src="images/RECETAS/omelette-proteico.png" alt="Omelette Proteico">
-                        <h3>Omelette Proteico de Vegetales</h3>
-                        <p>Un omelette nutritivo y sabroso para cualquier hora del día.</p>
-                        <a href="#" class="btn-receta">Ver Receta</a>
-                    </div>
-                    <div class="receta-card">
-                        <img src="images/chocolate-protein-cookies.jpg" alt="Galletas Proteicas">
-                        <h3>Galletas Proteicas de Chocolate</h3>
-                        <p>Galletas deliciosas y saludables para saciar tus antojos.</p>
-                        <a href="#" class="btn-receta">Ver Receta</a>
+            <div class="recetas-container"></div>
+                <h2>Recetas Deliciosas con EggVital</h2>
+                <div class="receta-carousel">
+                    <div class="receta-grid">
+                        <div class="receta-card">
+                            <img src="images/protein-smoothie.jpg" alt="Batido Proteico">
+                            <h3>Batido Proteico de Fresa y Plátano</h3>
+                            <p>Un delicioso batido lleno de proteínas para empezar tu día.</p>
+                            <a href="#" class="btn-receta">Ver Receta</a>
+                        </div>
+                        <div class="receta-card">
+                            <img src="images/protein-pancakes.jpg" alt="Pancakes Proteicos">
+                            <h3>Pancakes Proteicos de Avena</h3>
+                            <p>Pancakes saludables y deliciosos para un desayuno nutritivo.</p>
+                            <a href="#" class="btn-receta">Ver Receta</a>
+                        </div>
+                        <div class="receta-card">
+                            <img src="images/RECETAS/muffins-espinacas.png" alt="Muffins de Espinacas">
+                            <h3>Muffins de Claras y Espinacas</h3>
+                            <p>Muffins salados perfectos para un snack saludable.</p>
+                            <a href="#" class="btn-receta">Ver Receta</a>
+                        </div>
+                        <div class="receta-card">
+                            <img src="images/RECETAS/omelette-proteico.png" alt="Omelette Proteico">
+                            <h3>Omelette Proteico de Vegetales</h3>
+                            <p>Un omelette nutritivo y sabroso para cualquier hora del día.</p>
+                            <a href="#" class="btn-receta">Ver Receta</a>
+                        </div>
+                        <div class="receta-card">
+                            <img src="images/chocolate-protein-cookies.jpg" alt="Galletas Proteicas">
+                            <h3>Galletas Proteicas de Chocolate</h3>
+                            <p>Galletas deliciosas y saludables para saciar tus antojos.</p>
+                            <a href="#" class="btn-receta">Ver Receta</a>
+                        </div>
                     </div>
                 </div>
             </div>
