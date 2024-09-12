@@ -33,32 +33,43 @@ document.addEventListener('DOMContentLoaded', function() {
             const newPosition = -currentIndex * recetaWidth;
             recetaGrid.style.transform = `translateX(${newPosition}px)`;
         }
+        updateButtonStates();
     }
 
     // Function to move to the next recipe
     function nextReceta() {
         if (currentIndex < recetas.length - (isMobile() ? 1 : visibleRecetas)) {
             currentIndex++;
-        } else {
-            currentIndex = 0; // Return to the beginning if it reaches the end
+            updateCarousel();
         }
-        updateCarousel();
     }
 
     // Function to move to the previous recipe
     function prevReceta() {
         if (currentIndex > 0) {
             currentIndex--;
-        } else {
-            currentIndex = recetas.length - (isMobile() ? 1 : visibleRecetas); // Go to the end if at the beginning
+            updateCarousel();
         }
-        updateCarousel();
+    }
+
+    // Function to update button states
+    function updateButtonStates() {
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === recetas.length - (isMobile() ? 1 : visibleRecetas);
+        }
     }
 
     // Start auto-scroll (only for non-mobile devices)
     function startAutoScroll() {
         if (!isMobile() && !autoScrollInterval) {
-            autoScrollInterval = setInterval(nextReceta, 3000); // Change every 3 seconds
+            autoScrollInterval = setInterval(() => {
+                if (currentIndex < recetas.length - visibleRecetas) {
+                    nextReceta();
+                } else {
+                    stopAutoScroll(); // Stop auto-scroll when reaching the end
+                }
+            }, 3000); // Change every 3 seconds
         }
     }
 
@@ -148,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Execute initial adjustment and on each resize
     adjustCarouselWidth();
+    updateButtonStates();
     window.addEventListener('resize', () => {
         adjustCarouselWidth();
         updateCarousel();
