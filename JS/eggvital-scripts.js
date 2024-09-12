@@ -117,41 +117,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Touch slide functionality for mobile
-    let startX, isDragging = false, startScrollLeft;
-    const sensitivity = 20; // Adjust this value to change swipe sensitivity (in pixels)
+    // // Touch slide functionality for mobile
+    // let startX, isDragging = false, startScrollLeft;
+    // const sensitivity = 0.1; // Adjust this value to change swipe sensitivity (in pixels)
 
-    if (isMobile()) {
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startScrollLeft = carousel.scrollLeft;
-            isDragging = true;
-        });
+    // if (isMobile()) {
+    //     carousel.addEventListener('touchstart', (e) => {
+    //         startX = e.touches[0].clientX;
+    //         startScrollLeft = carousel.scrollLeft;
+    //         isDragging = true;
+    //     });
 
-        carousel.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault(); // Prevent page scrolling
-            const currentX = e.touches[0].clientX;
-            const diff = startX - currentX;
-            carousel.scrollLeft = startScrollLeft + diff;
-        });
+    //     carousel.addEventListener('touchmove', (e) => {
+    //         if (!isDragging) return;
+    //         e.preventDefault(); // Prevent page scrolling
+    //         const currentX = e.touches[0].clientX;
+    //         const diff = startX - currentX;
+    //         carousel.scrollLeft = startScrollLeft + diff;
+    //     });
 
-        carousel.addEventListener('touchend', () => {
-            isDragging = false;
-            const totalScroll = carousel.scrollLeft - startScrollLeft;
+    //     carousel.addEventListener('touchend', () => {
+    //         isDragging = false;
+    //         const totalScroll = carousel.scrollLeft - startScrollLeft;
             
-            if (Math.abs(totalScroll) > sensitivity) {
-                if (totalScroll > 0) {
-                    nextReceta();
-                } else {
-                    prevReceta();
-                }
-            } else {
-                // If the scroll wasn't significant, snap back to the current recipe
-                updateCarousel();
-            }
-        });
-    }
+    //         if (Math.abs(totalScroll) > sensitivity) {
+    //             if (totalScroll > 0) {
+    //                 nextReceta();
+    //             } else {
+    //                 prevReceta();
+    //             }
+    //         } else {
+    //             // If the scroll wasn't significant, snap back to the current recipe
+    //             updateCarousel();
+    //         }
+    //     });
+    // }
 
     // Smooth navigation for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
