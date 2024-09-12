@@ -18,26 +18,25 @@ body {
     color: var(--color-gris-oscuro);
 }
 
+
 header {
     background-color: var(--color-verde-natural);
-    color: white;
+    color: var(--color-blanco-huevo);
     padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative; /* Añadido para posicionamiento absoluto del botón */
 }
-
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrar el contenido */
     align-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 0 20px;
+    margin: 0 auto;
 }
 
 .home-button {
-    background-color: white;
+    background-color: var(--color-blanco-huevo);
     color: var(--color-verde-natural);
     border: 2px solid var(--color-verde-natural);
     padding: 10px 20px;
@@ -45,15 +44,21 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    position: absolute; /* Posicionamiento absoluto */
+    right: 20px; /* Alinear a la derecha */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrado vertical */
 }
 
 .home-button:hover {
-    background-color: var(--color-verde-natural);
-    color: white;
+    background-color: var(--color-amarillo-arequipe);
+    color: var(--color-blanco-huevo);
 }
+
 
 h1 {
     margin: 0;
+    text-align: center; /* Asegurar que el texto esté centrado */
 }
 
 .container {
