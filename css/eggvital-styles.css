@@ -288,7 +288,7 @@ h2 {
 
 .btn-receta {
     display: block;
-    background: linear-gradient(45deg, var(--color-verde-natural), var(--color-azul-vainilla));
+    background: linear-gradient(45deg, var(--color-salmon), var(--color-amarillo-arequipe));
     color: white;
     text-align: center;
     padding: 0.5rem 0;
