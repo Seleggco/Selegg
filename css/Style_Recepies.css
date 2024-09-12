@@ -1,0 +1,146 @@
+/* estilos.css */
+
+:root {
+    --color-verde-natural: #AED073;
+    --color-amarillo-arequipe: #F8B13C;
+    --color-azul-vainilla: #6FBCE9;
+    --color-violeta-cremoso: #A075B2;
+    --color-salmon: #ED6E6F;
+    --color-gris-oscuro: #515151;
+    --color-blanco-huevo: #F9F7E1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-blanco-huevo);
+    margin: 0;
+    padding: 0;
+    color: var(--color-gris-oscuro);
+}
+
+header {
+    background-color: var(--color-verde-natural);
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.home-button {
+    background-color: white;
+    color: var(--color-verde-natural);
+    border: 2px solid var(--color-verde-natural);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--color-verde-natural);
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para la página de receta individual */
+.recipe-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recipe-description {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--color-verde-natural);
+}
+
+.ingredients, .instructions {
+    margin-top: 20px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+.cta-button {
+    display: block;
+    background: linear-gradient(to right, var(--color-salmon), var(--color-amarillo-arequipe));
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilos para la página index */
+#recetas {
+    padding: 50px 0;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card-content {
+    padding: 20px;
+}
+
+.recipe-card h3 {
+    color: var(--color-verde-natural);
+    margin-top: 0;
+}
+
+.recipe-card a {
+    display: inline-block;
+    background: linear-gradient(to right, var(--color-salmon), var(--color-amarillo-arequipe));
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 10px;
+}
