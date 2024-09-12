@@ -2,92 +2,77 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.receta-carousel');
     const recetaGrid = document.querySelector('.receta-grid');
     const recetas = document.querySelectorAll('.receta-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
     let currentIndex = 0;
     const visibleRecetas = 3;
+    let autoScrollInterval;
 
-    // Función para actualizar la posición del carrusel
+    // Function to update the carousel position
     function updateCarousel() {
         const recetaWidth = recetas[0].offsetWidth;
         const newPosition = -currentIndex * recetaWidth;
         recetaGrid.style.transform = `translateX(${newPosition}px)`;
     }
 
-    // Función para mover a la siguiente receta
+    // Function to move to the next recipe
     function nextReceta() {
         if (currentIndex < recetas.length - visibleRecetas) {
             currentIndex++;
-            updateCarousel();
+        } else {
+            currentIndex = 0; // Return to the beginning if it reaches the end
         }
+        updateCarousel();
     }
 
-    // Función para mover a la receta anterior
+    // Function to move to the previous recipe
     function prevReceta() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+        } else {
+            currentIndex = recetas.length - visibleRecetas; // Go to the end if at the beginning
         }
+        updateCarousel();
     }
 
-    // Manejo de eventos táctiles
-    let startX, moveX;
-    carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
+    // Start auto-scroll
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(nextReceta, 3000); // Change every 3 seconds
+    }
+
+    // Stop auto-scroll
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    // Mouse events to stop/resume auto-scroll
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+
+    // Button click events
+    nextBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        nextReceta();
+        startAutoScroll();
     });
 
-    carousel.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        moveX = e.touches[0].clientX;
+    prevBtn.addEventListener('click', () => {
+        stopAutoScroll();
+        prevReceta();
+        startAutoScroll();
     });
 
-    carousel.addEventListener('touchend', () => {
-        if (startX - moveX > 50) {
-            nextReceta();
-        } else if (moveX - startX > 50) {
-            prevReceta();
-        }
-    });
-
-    // Manejo de eventos de mouse
-    let isDown = false;
-    let startMouseX;
-    carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startMouseX = e.pageX - carousel.offsetLeft;
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-    });
-
-    carousel.addEventListener('mouseup', () => {
-        isDown = false;
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = x - startMouseX;
-        if (walk < -50) {
-            nextReceta();
-            isDown = false;
-        } else if (walk > 50) {
-            prevReceta();
-            isDown = false;
-        }
-    });
-
-    // Ajustar el ancho del contenedor para mostrar solo 3 recetas
+    // Adjust the width of the container to show only 3 recipes
     function adjustCarouselWidth() {
         const recetaWidth = recetas[0].offsetWidth;
         carousel.style.width = `${recetaWidth * visibleRecetas}px`;
     }
 
-    // Ejecutar ajuste inicial y en cada redimensionamiento
+    // Execute initial adjustment and on each resize
     adjustCarouselWidth();
     window.addEventListener('resize', adjustCarouselWidth);
 
-    // Navegación suave para los enlaces internos
+    // Smooth navigation for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -96,4 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Start auto-scroll when loading the page
+    startAutoScroll();
 });
