@@ -22,15 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to update the carousel position
-    function updateCarousel() {
+    function updateCarousel(smooth = true) {
         const recetaWidth = recetas[0].offsetWidth;
         if (isMobile()) {
             carousel.scrollTo({
                 left: currentIndex * recetaWidth,
-                behavior: 'smooth'
+                behavior: smooth ? 'smooth' : 'auto'
             });
         } else {
             const newPosition = -currentIndex * recetaWidth;
+            recetaGrid.style.transition = smooth ? 'transform 0.3s ease' : 'none';
             recetaGrid.style.transform = `translateX(${newPosition}px)`;
         }
         updateButtonStates();
@@ -117,33 +118,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Touch slide functionality for mobile
-    let startX, isDragging = false;
-    const sensitivity = 0.1; // Adjust this value to change swipe sensitivity
+    let startX, isDragging = false, startScrollLeft;
+    const sensitivity = 20; // Adjust this value to change swipe sensitivity (in pixels)
 
     if (isMobile()) {
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
+            startScrollLeft = carousel.scrollLeft;
             isDragging = true;
         });
 
         carousel.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
+            e.preventDefault(); // Prevent page scrolling
             const currentX = e.touches[0].clientX;
             const diff = startX - currentX;
-            const recetaWidth = recetas[0].offsetWidth;
-
-            if (Math.abs(diff) > recetaWidth * sensitivity) {
-                if (diff > 0) {
-                    nextReceta();
-                } else {
-                    prevReceta();
-                }
-                isDragging = false;
-            }
+            carousel.scrollLeft = startScrollLeft + diff;
         });
 
         carousel.addEventListener('touchend', () => {
             isDragging = false;
+            const totalScroll = carousel.scrollLeft - startScrollLeft;
+            
+            if (Math.abs(totalScroll) > sensitivity) {
+                if (totalScroll > 0) {
+                    nextReceta();
+                } else {
+                    prevReceta();
+                }
+            } else {
+                // If the scroll wasn't significant, snap back to the current recipe
+                updateCarousel();
+            }
         });
     }
 
@@ -162,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateButtonStates();
     window.addEventListener('resize', () => {
         adjustCarouselWidth();
-        updateCarousel();
+        updateCarousel(false); // Update without smooth transition on resize
         stopAutoScroll(); // Always stop auto-scroll on resize
         if (!isMobile()) {
             startAutoScroll(); // Only start auto-scroll if not mobile
