@@ -56,6 +56,7 @@ nav ul li a {
     padding: 0.8rem 1.2rem;
     border-radius: 25px;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -127,6 +128,56 @@ nav ul li a.active {
 .cta-button:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+/* Boton comprar  */
+
+.BOTOM_COMPRA {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--color-azul-vainilla), var(--color-salmon));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  
+}
+
+.BOTOM_COMPRA:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+
+.comprar-ahora-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+/* Estilo para el botón Comprar Ahora */
+.comprar-ahora-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(33.33% - 20px); /* Mismo ancho que las cajas de arriba, ajusta si es necesario */
+    height: 50px; /* Ajusta la altura según prefieras */
+    background: linear-gradient(to right, #8ab4f8, #f78fb3);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.comprar-ahora-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 h2 {
@@ -385,6 +436,9 @@ footer {
 
     nav ul li {
         margin: 0.5rem;
+    }
+    .comprar-ahora-button{
+        width: 100%;
     }
 
     .hero-content {
