@@ -141,7 +141,7 @@ h2 {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(45deg, var(--color-verde-natural), var(--color-amarillo-arequipe));
+    background: linear-gradient(45deg, var(--color-salmon), var(--color-azul-vainilla));
     color: white;
     text-align: center;
     padding: 15px 30px;
@@ -204,7 +204,7 @@ footer {
 
     .cta-button {
         display: block;
-        width: calc(100% - 40px); /* Full width minus padding */
+        
         max-width: none;
         margin: 0 auto;
     }
